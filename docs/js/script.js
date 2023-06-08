@@ -591,7 +591,7 @@ function saveTodo() {
     // console.log(id);
     let values = [];
 
-    let inputSave = document.getElementById("todoInput-0");
+    let inputSave = document.getElementById("todoInput-" + 0);
     let value = inputSave.value;
     console.log(value);
 
