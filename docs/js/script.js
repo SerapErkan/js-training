@@ -687,6 +687,7 @@ function saveTodo() {
     }
 
 
+    inputSave.value = "";
 
 }
 
