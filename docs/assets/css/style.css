@@ -1,0 +1,189 @@
+/* variables */
+:root {
+  --nunito-font: "Nunito Sans", sans-serif;
+  --montserrat-font: "Montserrat", sans-serif;
+
+  --theme-1: #476edb;
+  --theme-2: #eb5628;
+  --theme-3: #23be30;
+
+  --whitesmoke-color: #f8f1f1;
+  --grey-color: #8b8888;
+  --dark-color: #141414;
+  --light-color: #fff;
+  --transition: all 0.5s ease-in-out;
+  --gradient: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+  /*yumuşak kaydırma efekt*/
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  font-family: var(--montserrat-font);
+  color: var(--dark-color);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  transform: scale(1);
+  transition: var(--transition);
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: var(--transition);
+}
+img:hover {
+  transform: scale(1.1);
+}
+
+i {
+  margin-right: 2rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  font-family: var(--nunito-font);
+  line-height: 1.2;
+}
+input {
+  font-size: large;
+  color: var(--theme-1);
+}
+
+.todo {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.todo li {
+  width: 300px;
+  background-color: var(--theme-1);
+  padding: 5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid var(--theme-1);
+  margin-top: 4rem;
+}
+.todo li a {
+  color: #fff;
+}
+
+.todo li:hover {
+  background-color: var(--light-color);
+}
+.todo li:hover > a {
+  color: var(--theme-1);
+}
+
+.note {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+.note > div {
+  margin: 5rem;
+}
+
+.notes {
+  width: 100%;
+  padding: 20px;
+  width: 82%;
+  margin: 100px auto;
+}
+.todo-two {
+  width: 100%;
+  padding: 20px;
+
+  margin: 100px auto;
+}
+
+.theme {
+  position: absolute;
+  top: 0;
+  margin-top: 20px;
+}
+.theme span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+.theme span:hover {
+  opacity: 1;
+}
+#theme-1 {
+  background-color: #476edbde;
+}
+#theme-2 {
+  background-color: var(--theme-2);
+}
+#theme-3 {
+  background-color: var(--theme-3);
+}
+
+#todo-one {
+  background-color: var(--theme-1);
+  opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .todo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+  .note {
+    width: 100%;
+  }
+  .notes {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .todo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+.c {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
