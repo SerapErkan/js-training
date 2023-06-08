@@ -1,4 +1,5 @@
 let id = 0;
+let value = "";
 // todo-1
 let todoElement = document.getElementById("todo-1");
 todoElement.onclick = addNote;
@@ -22,7 +23,8 @@ todo3.style.display = "none";
 
 
 
-// todo-1
+
+// <<<  todo-3  >>>
 function addNote() {
 
     let todo1 = document.getElementById("todo-one");
@@ -161,7 +163,10 @@ function save() {
 
 }
 
-// todo-2
+
+
+
+// <<<  todo-2  >>>
 function addFile() {
 
     let todo1 = document.getElementById("todo-one");
@@ -233,7 +238,9 @@ function deletedFile(event) {
     divElement.remove();
 
 }
-function saveFile() {
+function saveFile(event) {
+
+
     let search = document.getElementById("todo-two");
     let fileInputList = search.querySelectorAll("input");
     let values = [];
@@ -244,11 +251,55 @@ function saveFile() {
     }
     console.log(values);
 
+
+    //deneme 
+    let btnId = event.target.id;
+    let id = btnId.split("-")[1];
+
+    let fileInput = document.getElementById("input-" + id);
+
+    let file = fileInput.files[0]; // Seçilen dosya
+
+    let reader = new FileReader();
+
+    reader.onload = function (e) {
+        let image = document.createElement("img");
+        image.id = "imgFile";
+        image.src = e.target.result;
+        image.style.width = "200px";
+        image.style.borderRadius = "50%";
+        image.accept = "image/*";
+
+        let targetDiv = document.getElementById("file-wrapper-" + id); // Resmi eklemek istediğiniz HTML elementinin ID'si
+        let existingImage = targetDiv.querySelector("img"); // Önceki resim elementini seç
+
+        if (existingImage) {
+            targetDiv.replaceChild(image, existingImage); // Önceki resmi yenisiyle değiştir
+        } else {
+            targetDiv.appendChild(image); // Önce resim yoksa yeni resmi ekle
+        }
+    };
+
+    reader.readAsDataURL(file);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
-//todo-3
 
 
+// <<<  todo-3  >>>
 let nameInput = document.createElement("input");
 let passwordInpur = document.createElement("input");
 let divElement = document.createElement("div");
@@ -335,6 +386,7 @@ function register() {
     divElement.appendChild(loginBtnElement);
 
 }
+
 function imgAdd() {
 
     let fileDiv = document.getElementById("register-wrapper");
@@ -451,6 +503,7 @@ function saveImgFx(event) {
 
 
 
+// <<<  todo-4  >>>
 
 let todo4 = document.getElementById("todo-4");
 todo4.onclick = addTodo;
@@ -515,8 +568,8 @@ function addTodo() {
 
 
 
-
-    todoWrapper.appendChild(todoDivInput);
+    //ilk element ekler
+    todoWrapper.insertBefore(todoDivInput, todoWrapper.firstChild);
     todoDivInput.appendChild(todoInput);
     todoDivInput.append(todoBtnSave);
 
