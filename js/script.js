@@ -1,4 +1,5 @@
 let id = 0;
+let value = "";
 // todo-1
 let todoElement = document.getElementById("todo-1");
 todoElement.onclick = addNote;
@@ -515,8 +516,8 @@ function addTodo() {
 
 
 
-
-    todoWrapper.appendChild(todoDivInput);
+    //ilk element ekler
+    todoWrapper.insertBefore(todoDivInput, todoWrapper.firstChild);
     todoDivInput.appendChild(todoInput);
     todoDivInput.append(todoBtnSave);
 
